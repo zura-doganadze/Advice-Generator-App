@@ -16,7 +16,11 @@ function App() {
             "Lorem ipsum, dolor sit amet consectetur adipisicing elit.
             Assumenda"
           </p>
-          
+          <div  className="flex gap-4 items-center">
+            <div className="md:w-48 w-32 h-1 bg-line-background"></div>
+            <img src={pauseIcon} alt="icon" />
+            <div className="md:w-48 w-32 h-1 bg-line-background"></div>
+          </div>
         </div>
         <div
           className="flex items-center justify-center absolute left-1/2 transform -translate-x-1/2 
