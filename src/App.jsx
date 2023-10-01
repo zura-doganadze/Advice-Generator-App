@@ -15,12 +15,10 @@ function App() {
 
       const data = await response.json();
 
-      console.log(data.slip.id, data.slip.advice);
+      // console.log(data.slip.id, data.slip.advice);
       setState(data);
 
-      console.log(state.slip.id);
-      console.log(state.slip.advice);
-
+      // console.log(state.slip.id);
     } catch (Error) {
       console.log(Error);
     }
@@ -34,10 +32,10 @@ function App() {
       <div className="bg-card-baclground flex flex-col md:max-w-xl max-w-sm w-full rounded-xl relative md:mx-0 mx-64">
         <div className="flex items-center flex-col my-14 mx-10">
           <h1 className="mb-8 text-lg tracking-wider font-bold uppercase text-h1-color 		">
-            advice {state.slip.id}
+            advice {state !== "" && state.slip.id}
           </h1>
           <p className="text-white text-3xl font-extrabold mb-8 text-center">
-            "{state.slip.advice}"
+            "{state !== "" && state.slip.advice}"
           </p>
           <div className="flex gap-4 items-center">
             <div className="md:w-48 w-32 h-1 bg-line-background"></div>
@@ -50,7 +48,7 @@ function App() {
                     inset-92 w-16 h-16 rounded-full bg-btn-background cursor-pointer 
                     transition-transform hover:scale-105 hover:shadow-custom-shadow"
         >
-          <button>
+          <button onClick={() => fetchAdvice()}>
             <img src={batonsIcon} alt="img" />
           </button>
         </div>
